@@ -1,0 +1,29 @@
+{
+  "name": "fleet-benchmarks",
+  "version": "2.0.0",
+  "description": "Standardized benchmarking suite for fleet vessel performance",
+  "main": "src/core/index.ts",
+  "scripts": {
+    "bench": "npx tsx run-benchmarks.ts",
+    "bench:full": "npx tsx run-benchmarks.ts --iterations 5000 --markdown bench-report.md --json bench-results.json",
+    "bench:quick": "npx tsx run-benchmarks.ts --iterations 100 --warmup 10 --verbose",
+    "bench:opcode": "npx tsx run-benchmarks.ts --category 'Opcode Execution Speed' --verbose",
+    "bench:memory": "npx tsx run-benchmarks.ts --category 'Memory Usage' --verbose",
+    "bench:startup": "npx tsx run-benchmarks.ts --category 'Startup Time' --verbose",
+    "bench:throughput": "npx tsx run-benchmarks.ts --category 'Throughput' --verbose",
+    "bench:msgbus": "npx tsx run-benchmarks.ts --category 'Message Bus Latency' --verbose",
+    "bench:conformance": "npx tsx run-benchmarks.ts --category 'Conformance Test Coverage' --verbose",
+    "bench:cross-runtime": "npx tsx run-benchmarks.ts --category 'Cross-Runtime Comparison' --verbose",
+    "test": "npx vitest run",
+    "test:watch": "npx vitest",
+    "test:coverage": "npx vitest run --coverage"
+  },
+  "keywords": ["benchmark", "fleet", "performance", "cocapn"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "tsx": "^4.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
